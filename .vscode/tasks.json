@@ -10,7 +10,7 @@
         "${workspaceFolder}/ConfigReader.cpp",
         "${workspaceFolder}/MessageSender.cpp",
         "-o",
-        "${workspaceFolder}/${fileBasenameNoExtension}",
+        "${workspaceFolder}/main",
         "-lzmq"
       ],
       "options": {

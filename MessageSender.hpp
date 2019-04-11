@@ -18,5 +18,6 @@ public:
     void SendWait(int monitorId);
     void SendSignal(int monitorId);
     void SendSignalAll(int monitorId);
+    void GenerateNoise();
 };
 

@@ -1,13 +1,26 @@
 #include "MessageSender.hpp"
 
+#include <unistd.h>
+
 MessageSender::MessageSender(context_t * context, string address) : publisher(*context, ZMQ_PUB)
 {
     string transport(address);
     this->publisher.bind(transport);
+    this->GenerateNoise();
 }
 
 MessageSender::~MessageSender()
 {
+}
+
+void MessageSender::GenerateNoise()
+{
+    for(size_t i = 0; i < 10; i++)
+    {
+        usleep(100000);
+        SendMessage(-1, NOISE_MSG_TYPE);
+    }
+    
 }
 
 void MessageSender::SendMessage(int monitorId, enum requestTypes msgType)
@@ -19,7 +32,7 @@ void MessageSender::SendMessage(int monitorId, enum requestTypes msgType)
 
     zmq::message_t message(sizeof(struct Message));
     memcpy(message.data(), &myMmessage, sizeof(struct Message));
-    this->publisher.send(message);
+    cout << this->publisher.send(message) << endl;
 }
 
 void MessageSender::SendP(int monitorId)
