@@ -11,7 +11,7 @@ private:
     void SendMessage(int monitorId, enum requestTypes msgType);
     socket_t publisher;
 public:
-    MessageSender(context_t * context, string address);
+    MessageSender(context_t * context, char * address);
     ~MessageSender();
     void SendP(int monitorId);
     void SendV(int monitorId);

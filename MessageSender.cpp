@@ -2,7 +2,7 @@
 
 #include <unistd.h>
 
-MessageSender::MessageSender(context_t * context, string address) : publisher(*context, ZMQ_PUB)
+MessageSender::MessageSender(context_t * context, char * address) : publisher(*context, ZMQ_PUB)
 {
     string transport(address);
     this->publisher.bind(transport);

@@ -2,10 +2,10 @@
 
 using namespace std;
 
-ConfigReader::ConfigReader(string configPath)
+ConfigReader::ConfigReader(char * configFilePath)
 {
     ifstream configFile;
-    configFile.open (configPath);
+    configFile.open(configFilePath);
 
     string line;
     while(getline(configFile, line)){

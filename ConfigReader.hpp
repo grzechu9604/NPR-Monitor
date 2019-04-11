@@ -9,7 +9,7 @@ class ConfigReader
 {
 private:
 public:
-    ConfigReader(string);
+    ConfigReader(char * configFilePath);
     ~ConfigReader();
     vector<string> ProcessesAdresses;
 };
