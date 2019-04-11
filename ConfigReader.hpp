@@ -11,6 +11,5 @@ private:
 public:
     ConfigReader(string);
     ~ConfigReader();
-    int AmountOfProcessesToConnect;
     vector<string> ProcessesAdresses;
 };

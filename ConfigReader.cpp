@@ -11,7 +11,6 @@ ConfigReader::ConfigReader(string configPath)
     while(getline(configFile, line)){
         ProcessesAdresses.push_back(line);
     }
-    this->AmountOfProcessesToConnect = ProcessesAdresses.size();
 }
 
 ConfigReader::~ConfigReader()

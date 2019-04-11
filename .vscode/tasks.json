@@ -6,8 +6,9 @@
       "command": "/usr/bin/g++-7",
       "args": [
         "-g",
-        "${fileDirname}/../main.cpp",
-        "${fileDirname}/../ConfigReader.cpp",
+        "${fileDirname}/main.cpp",
+        "${fileDirname}/ConfigReader.cpp",
+        "${fileDirname}/MessageSender.cpp",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}",
         "-lzmq"
