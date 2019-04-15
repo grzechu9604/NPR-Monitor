@@ -9,6 +9,8 @@
         "${workspaceFolder}/main.cpp",
         "${workspaceFolder}/ConfigReader.cpp",
         "${workspaceFolder}/MessageSender.cpp",
+        "${workspaceFolder}/IDSetter.cpp",
+        "${workspaceFolder}/IDGetter.cpp",
         "-o",
         "${workspaceFolder}/main",
         "-lzmq"

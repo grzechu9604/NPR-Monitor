@@ -1,6 +1,6 @@
 /**
  * 
- * ./main --addr protocol://address:port --config configFilePath
+ * ./main --addr protocol://address:port --config configFilePath --isServer 1/0
  * 
  * 
  **/
@@ -11,26 +11,28 @@
 #include <unistd.h>
 #include "ConfigReader.hpp"
 #include "MessageSender.hpp"
+#include "IDGetter.hpp"
+#include "IDSetter.hpp"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    for(size_t i = 0; i < argc; i++)
-    {
-        cout << argv[i]<<endl;
-    }
-    
-    zmq::context_t context(1);
-    MessageSender sender(&context, argv[2]);
     ConfigReader cr(argv[4]);
 
-    for(int i = 0; i < 100; i++)
+    int id = -1;
+
+    if (argv[6][0] == '1')
     {
-        sender.SendP(1);
-        sender.SendSignal(2);
-        sender.SendSignalAll(3);
-        sender.SendV(4);
-        sender.SendWait(5);
+        id = 0;
+        IDSetter setter(argv[2], cr.ProcessesAdresses.size() - 1);
     }
+    else
+    {
+        IDGetter getter(cr.ProcessesAdresses[0]);
+        id = getter.GetID();
+    }
+
+    cout << "My ID: " << id << endl;
+    
 }

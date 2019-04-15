@@ -1,11 +1,20 @@
 
 enum requestTypes
 {
-    WAIT_MSG_TYPE, SIGNAL_MSG_TYPE, SIGNAL_ALL_MSG_TYPE, P_MSG_TYPE, V_MSG_TYPE, NOISE_MSG_TYPE
+    GIVE_ID_MSG_TYPE = 1, 
+    SET_ID_MSG_TYPE,
+    RESET_MSG_TYPE,
+    WAIT_MSG_TYPE, 
+    SIGNAL_MSG_TYPE, 
+    SIGNAL_ALL_MSG_TYPE, 
+    P_MSG_TYPE, 
+    V_MSG_TYPE, 
+    NOISE_MSG_TYPE
 };
 
 struct Message {
-    char ID;
-    requestTypes type;
-    int monitorId;
+    int ProcessID;
+    requestTypes Type;
+    int MonitorId;
+    int Data;
 };

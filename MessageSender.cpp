@@ -1,5 +1,6 @@
 #include "MessageSender.hpp"
 
+
 #include <unistd.h>
 
 MessageSender::MessageSender(context_t * context, char * address) : publisher(*context, ZMQ_PUB)
@@ -26,9 +27,9 @@ void MessageSender::GenerateNoise()
 void MessageSender::SendMessage(int monitorId, enum requestTypes msgType)
 {
     struct Message myMmessage;
-    myMmessage.ID = 'G';
-    myMmessage.monitorId = monitorId;
-    myMmessage.type = msgType;
+    //myMmessage.ID = 'G';
+    myMmessage.MonitorId = monitorId;
+    myMmessage.Type = msgType;
 
     zmq::message_t message(sizeof(struct Message));
     memcpy(message.data(), &myMmessage, sizeof(struct Message));
