@@ -7,7 +7,7 @@ class IDSetter
 {
   private:
   public:
-    IDSetter(char * bindingAddress, int followersAmount);
+    IDSetter(string bindingAddress, int followersAmount);
     ~IDSetter();
 };
 

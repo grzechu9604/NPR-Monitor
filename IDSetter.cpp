@@ -1,7 +1,7 @@
 #include "IDSetter.hpp"
 #include "MonitorDataTypes.hpp"
 
-IDSetter::IDSetter(char *bindingAddress, int followersAmount)
+IDSetter::IDSetter(string bindingAddress, int followersAmount)
 {
     context_t context(2);
     socket_t socket(context, ZMQ_REP);

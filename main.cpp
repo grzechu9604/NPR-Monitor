@@ -1,6 +1,6 @@
 /**
  * 
- * ./main --addr protocol://address:port --config configFilePath --isServer 1/0
+ * ./main --config configFilePath
  * 
  * 
  **/
@@ -10,29 +10,15 @@
 #include <iostream>
 #include <unistd.h>
 #include "ConfigReader.hpp"
-#include "MessageSender.hpp"
-#include "IDGetter.hpp"
-#include "IDSetter.hpp"
+#include "MonitorWrapper.hpp"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    ConfigReader cr(argv[4]);
+    ConfigReader cr(argv[2]);
 
-    int id = -1;
+    MonitorWrapper wrapper(cr);
 
-    if (argv[6][0] == '1')
-    {
-        id = 0;
-        IDSetter setter(argv[2], cr.ProcessesAdresses.size() - 1);
-    }
-    else
-    {
-        IDGetter getter(cr.ProcessesAdresses[0]);
-        id = getter.GetID();
-    }
-
-    cout << "My ID: " << id << endl;
-    
+    cout << "My ID: " << wrapper.GetID() << endl;
 }

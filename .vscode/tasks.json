@@ -11,6 +11,7 @@
         "${workspaceFolder}/MessageSender.cpp",
         "${workspaceFolder}/IDSetter.cpp",
         "${workspaceFolder}/IDGetter.cpp",
+        "${workspaceFolder}/MonitorWrapper.cpp",
         "-o",
         "${workspaceFolder}/main",
         "-lzmq"

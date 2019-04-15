@@ -5,11 +5,17 @@
 
 using namespace std;
 
+#pragma once
+
 class ConfigReader
 {
 private:
+    bool isSetter;
 public:
     ConfigReader(char * configFilePath);
     ~ConfigReader();
     vector<string> ProcessesAdresses;
+    bool IsSetter();
+    string PassiveAddress;
+    string ActiveAddress;
 };

@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/main",
-            "args": ["--addr" , "tcp://*:5560", "--config", "adresses.config", "--isServer", "1"],
+            "args": ["--config", "adresses.config"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
