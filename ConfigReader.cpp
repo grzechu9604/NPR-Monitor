@@ -11,7 +11,6 @@ ConfigReader::ConfigReader(char * configFilePath)
     getline(configFile, line);
     this->isSetter = line[0] == '1';
 
-    getline(configFile, ActiveAddress);
     getline(configFile, PassiveAddress);
     
     while(getline(configFile, line)){

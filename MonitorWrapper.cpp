@@ -3,7 +3,6 @@
 MonitorWrapper::MonitorWrapper(ConfigReader cr) : cr(cr)
 {
     this->isSetter = cr.IsSetter();
-    this->ActiveAddress = cr.ActiveAddress;
     this->PassiveAddress = cr.PassiveAddress;
 
     if (this->isSetter)

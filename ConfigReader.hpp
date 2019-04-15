@@ -17,5 +17,4 @@ public:
     vector<string> ProcessesAdresses;
     bool IsSetter();
     string PassiveAddress;
-    string ActiveAddress;
 };
